@@ -11,5 +11,5 @@ document.querySelector("#ruta");
 let ruta = "#ruta";
 
 function inputEffect() {
-    
+    /* Här ska vi skriva vår kod */
 }
