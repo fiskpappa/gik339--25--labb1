@@ -1,0 +1,76 @@
+
+body {
+    background-color: #182525;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    color: #5E8275;
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+p {
+    color: #56766A;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: .5;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+footer {
+    height: 6%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    
+    & p {
+        font-size: 1rem;
+        color: #3C534A;
+    }
+}
+
+#form {
+    width: 60vw;
+    background-color: #283E3E;
+    color: azure;
+    padding: 2rem;
+    margin: 4rem auto;
+    border-radius: .8rem;  
+    box-shadow: 1rem 1rem 2rem black; 
+}
+
+.textfield {
+    background-color: #A0BAB0;
+    margin: .3rem 0 .8rem auto ;
+    border-radius: .3rem;
+    margin-right: 0;
+    width: 95%; 
+    padding: .3rem 0 .3rem .5rem;
+    color: #292E24;
+}
+
+#button {
+    padding: 0.6rem 1rem;
+    width: 20%;
+    border-radius: 0.6rem;
+    margin-top: 1.4rem;
+    background-color: #719889;
+    color: azure;
+    margin-left: 40%;
+    font-size: 1rem;
+}
+
+#ruta {
+    border-color: #A0BAB0;
+    border-style: solid;
+    padding: 2rem 0;
+    margin-top: 1.3rem;
+    border-radius: 0.4rem;
+    width: 100%;
+}
