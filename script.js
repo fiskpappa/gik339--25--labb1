@@ -1,29 +1,48 @@
-document.getElementsByClassName("checkbox");
-let boxen = "checkbox";
-
-document.querySelectorAll(".textfield");
-let textfält = ".textfield";
-
-const inputfältFärg = document.firstElementChild("#form");
-console.log("inputfärgFält");
-
-document.getElementById("#button");
-let knapp = "#button";
-
-/* document.querySelector("#ruta");
-let ruta = "#ruta"; */
-
-const ruta = document.getElementById("ruta");
-ruta.style.background = "green";
+/* Hämtar HTML-element och deklarerar variabler */
+const checkBox = document.body.children[1].children[8];
+const inputField = document.getElementsByClassName("textfield")
+const button = document.getElementById("button");
+const output = document.querySelector("#ruta");
 
 
-function inputEffect() {
-    /* Här ska vi skriva vår kod */
-/* document.textfield.addEventListener('keypress', (e) => console.log(e)); */
+/* Kontrollerar att det fungerar i konsollen */
+console.log(checkBox, button, output, inputField);
+
+/* Skapar en funktion för callback */
+function waitingForKeypress(callback) {
+    console.log("Vi väntar på att någonting skrivs"); 
+    callback();
 }
 
-document.getElementsByClassName("textfield").firstElementChild.addEventListener("keypress", inputEffect);
-console.log("");
+function handleKeypress(e) {
+    console.log("Någon klickade! Parameter: ", e);
+}
+
+/* HÄR SKA VI SKAPA EN FUNKTION DÄR
+   EVENTLYSSNARE SKA TRIGGAS. funktionsdeklaration */
+
+
+
+/* function testFunktion(keypress, handleKeypress) {
+    handleKeypress();
+} */
+
+/* console.log(inputField[0]); */
+
+
+
+/* Detta skriver ut i diven, men på fel sätt
+/* function inputToOutput() {
+output.innerHTML = document.body.children[1].children[5].value;
+}
+
+document.body.children[1].children[5].addEventListener('keyup', inputToOutput); */
+
+
+
+
+/* document.getElementsByClassName(".textfield").firstElementChild.addEventListener("keypress", inputEffect);
+console.log(""); */
 
 
 /* input */
