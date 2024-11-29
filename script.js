@@ -1,53 +1,42 @@
 /* Hämtar HTML-element och deklarerar variabler */
-const checkBox = document.body.children[1].children[8];
-const inputField = document.getElementsByClassName("textfield")
+const checkBox = document.querySelector(".checkbox");
+const inputField = document.querySelectorAll(".textfield");
 const button = document.getElementById("button");
-const output = document.querySelector("#ruta");
+const output = document.getElementById("ruta");
 
-
-/* Kontrollerar att det fungerar i konsollen */
+/* Kontrollerar att vi har hämtat rätt objekt till våra variabler */
 console.log(checkBox, button, output, inputField);
 
-/* Skapar en funktion för callback */
-function waitingForKeypress(callback) {
-    console.log("Vi väntar på att någonting skrivs"); 
-    callback();
-}
+/* For-loop som ser till att vi får en utskrift i konsollen när man skriver/ trycker på
+ på en tangent i något av de båda textfälten */
+inputField.forEach((field) => {
+    field.addEventListener("keyup", handleKeypress);
+});
 
+/* Skapar en funktion som hanterar vad som händer vid en keypress, och att den
+skriver ut det som skrivs i innehållsfältet till outputfältet */
 function handleKeypress(e) {
-    console.log("Någon klickade! Parameter: ", e);
+    console.log("Tangent har tryckts på!", e);
+    const name = e.target.name;
+    const value = e.target.value;
+    if (name == "content") {
+        output.innerHTML = "<p>" + value + "</p>";
+    }
 }
 
-/* HÄR SKA VI SKAPA EN FUNKTION DÄR
-   EVENTLYSSNARE SKA TRIGGAS. funktionsdeklaration */
+/* Här skapar vi en anonym funktion som ändrar bakgrundsfärgen på vår div */
+checkBox.addEventListener("change", function(e) {
+    const name = e.target.name;
+    const colorValue = e.target.form.elements["color"].value;
+    if (name == ("divStyle")) {
+            output.style.backgroundColor = colorValue;
+    }
+});
 
-
-
-/* function testFunktion(keypress, handleKeypress) {
-    handleKeypress();
-} */
-
-/* console.log(inputField[0]); */
-
-
-
-/* Detta skriver ut i diven, men på fel sätt
-/* function inputToOutput() {
-output.innerHTML = document.body.children[1].children[5].value;
-}
-
-document.body.children[1].children[5].addEventListener('keyup', inputToOutput); */
-
-
-
-
-/* document.getElementsByClassName(".textfield").firstElementChild.addEventListener("keypress", inputEffect);
-console.log(""); */
-
-
-/* input */
-
-/* 
-1. för varje tecken i "Färg" skrivs en console log ut i inspektorfönstret.
-2. detta gäller även för "Innehåll" men då skrivs även hela inputen ut till "ruta"
-3. om en färg skrivs in i "färg" OCH "stil på box" klickas i, byter "ruta" färg till den färgen som skrivits i.  */
+/* Här skapar vi  en anonym funktion som raderar div-elementet helt ur
+vår HTML-kod */
+button.addEventListener("click", function(e) {
+    e.preventDefault();
+    output.remove();
+    console.log("div-element har raderats");
+});
