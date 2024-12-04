@@ -19,6 +19,7 @@ function handleKeypress(e) {
     console.log("Tangent har tryckts på!", e);
     const name = e.target.name;
     const value = e.target.value;
+    console.log("Inputfält som skrevs i är: ", name);
     if (name == "content") {
         output.innerHTML = "<p>" + value + "</p>";
     }
