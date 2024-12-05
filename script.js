@@ -1,4 +1,4 @@
-/* Hämtar HTML-element och deklarerar variabler */
+/* Deklarerar variabler och tilldelar dessa HTML-element som hämtas på olika sätt*/
 const checkBox = document.querySelector(".checkbox");
 const inputField = document.querySelectorAll(".textfield");
 const button = document.getElementById("button");
@@ -29,9 +29,8 @@ function handleKeypress(e) {
 checkBox.addEventListener("change", function(e) {
     const name = e.target.name;
     const colorValue = e.target.form.elements["color"].value;
-    if (name == ("divStyle")) {
-            output.style.backgroundColor = colorValue;
-    }
+    output.style.backgroundColor = colorValue;
+    console.log("Färg har ändrats till: " + colorValue);
 });
 
 /* Här skapar vi  en anonym funktion som raderar div-elementet helt ur
