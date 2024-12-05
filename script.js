@@ -2,7 +2,7 @@
 const checkBox = document.querySelector(".checkbox");
 const inputField = document.querySelectorAll(".textfield");
 const button = document.getElementById("button");
-const output = document.getElementById("ruta");
+const output = document.getElementById("output");
 
 /* Kontrollerar att vi har hämtat rätt objekt till våra variabler */
 console.log(checkBox, button, output, inputField);
