@@ -19,7 +19,7 @@ function handleKeypress(e) {
     console.log("Tangent har tryckts på!", e);
     const name = e.target.name;
     const value = e.target.value;
-    console.log("Inputfält som skrevs i är: ", name);
+    console.log("Inputfält som skrevs i är: " + name);
     if (name == "content") {
         output.innerHTML = "<p>" + value + "</p>";
     }
@@ -27,7 +27,6 @@ function handleKeypress(e) {
 
 /* Här skapar vi en anonym funktion som ändrar bakgrundsfärgen på vår div */
 checkBox.addEventListener("change", function(e) {
-    const name = e.target.name;
     const colorValue = e.target.form.elements["color"].value;
     output.style.backgroundColor = colorValue;
     console.log("Färg har ändrats till: " + colorValue);
